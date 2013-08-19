@@ -48,7 +48,7 @@
                 dataContext.Projects.Add(model);
                 dataContext.SaveChanges();
 
-                return RedirectToIndexOrReturnNoContent(201 /* http status created */);
+                return RedirectToIndexOrHttpStatusCode(201 /* http status created */);
             }
 
             return View(model);
@@ -73,7 +73,7 @@
                 dataContext.Entry(model).State = EntityState.Modified;
                 dataContext.SaveChanges();
 
-                return RedirectToIndexOrReturnNoContent(204 /* http status no content */);
+                return RedirectToIndexOrHttpStatusCode(204 /* http status no content */);
             }
 
             return View(model);
@@ -87,7 +87,7 @@
             dataContext.Projects.Remove(model);
             dataContext.SaveChanges();
 
-            return RedirectToIndexOrReturnNoContent(204 /* http status no content */);
+            return RedirectToIndexOrHttpStatusCode(204 /* http status no content */);
         }
 
         protected override void Dispose(bool disposing)
@@ -101,7 +101,7 @@
             TryUpdateModel(model, new[] { "Name" }, fields.ToValueProvider());
         }
 
-        private ActionResult RedirectToIndexOrReturnNoContent(
+        private ActionResult RedirectToIndexOrHttpStatusCode(
             int httpStatusCode)
         {
             return Request.IsAjaxRequest() ?

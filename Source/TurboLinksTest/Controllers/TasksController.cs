@@ -25,7 +25,7 @@
                 dataContext.SaveChanges();
             }
 
-            return RedirectToProjectDetailsOrReturnNoContent(
+            return RedirectToProjectDetailsOrReturnHttpStatusCode(
                 201 /* http status code created*/,
                 model.ProjectId);
         }
@@ -46,7 +46,7 @@
                 dataContext.SaveChanges();
             }
 
-            return RedirectToProjectDetailsOrReturnNoContent(
+            return RedirectToProjectDetailsOrReturnHttpStatusCode(
                 204 /* http status no content */,
                 model.ProjectId);
         }
@@ -59,12 +59,12 @@
             dataContext.Tasks.Remove(model);
             dataContext.SaveChanges();
 
-            return RedirectToProjectDetailsOrReturnNoContent(
+            return  RedirectToProjectDetailsOrReturnHttpStatusCode(
                 204 /* http status no content */,
                 model.ProjectId);
         }
 
-        private ActionResult RedirectToProjectDetailsOrReturnNoContent(
+        private ActionResult RedirectToProjectDetailsOrReturnHttpStatusCode(
             int httpStatusCode,
             int projectId)
         {
