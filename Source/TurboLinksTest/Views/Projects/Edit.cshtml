@@ -1,0 +1,5 @@
+﻿@using TurboLinksTest.Models
+@model Project
+@{ ViewBag.Title = "Rename " + Model.Name; }
+<h1>@ViewBag.Title</h1>
+@Html.Partial("Form", Model)

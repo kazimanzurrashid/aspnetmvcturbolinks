@@ -1,0 +1,17 @@
+﻿@using TurboLinksTest.Models
+@model Task
+@using (Html.BeginForm("Edit", "Tasks", new { id = Model.Id })) {
+  @Html.AntiForgeryToken()
+  <label>@Html.CheckBox("Completed", Model.Completed) @Model.Name</label>
+}
+@using (Ajax.BeginForm(
+  "Delete",
+  "Tasks",
+  new { id = Model.Id },
+  new AjaxOptions { 
+    Confirm = "Are you sure you want to remove this task?",
+    OnSuccess = "onTaskSuccess"
+  })) {
+  @Html.AntiForgeryToken()
+  <button type="submit">remove</button>
+}

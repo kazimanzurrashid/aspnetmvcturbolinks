@@ -1,0 +1,91 @@
+html, body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a {
+  color: #00f;
+}
+
+#container {
+  background-color: #fff;
+  border: solid 1px #000;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px 40px;
+  width: 80%;
+}
+
+.field-validation-error {
+  color: #e80c4d;
+  font-weight: bold;
+}
+
+.field-validation-valid {
+  display: none;
+}
+
+form {
+  .field, .actions {
+    margin: 12px 0;
+  }
+}
+
+#projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  h2 {
+    margin-bottom: 5px;
+  }
+  li {
+    form {
+      display: inline-block;
+    }
+  }
+}
+
+#project {
+  h2 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #incomplete-list {
+    form {
+      margin: 5px 0;
+    }
+  }
+
+  #completed-list {
+    form {
+      font-size: 12px;
+      color: #777;
+      margin: 3px 0;
+
+      label {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .task-list {
+    form {
+      display: inline-block;
+    }
+    a {
+      color: #999;
+      font-size: 12px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿@using TurboLinksTest.Models
+@model TaskEditModel
+<h2>@Model.Title</h2>
+<ul id="@Model.DomId" class="task-list">
+  @foreach (var task in Model.List) {
+    <li>@Html.Partial("TaskDetails", task)</li>
+  }
+</ul>

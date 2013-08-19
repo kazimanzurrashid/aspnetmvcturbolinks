@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>@ViewBag.Title</title>
+  <link rel="stylesheet" href="~/Content/application.css" />
+  <script src="~/Scripts/jquery-2.0.3.js"></script>
+  <script src="~/Scripts/jquery.validate.js"></script>
+  <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+  <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+  <script src="~/Scripts/turbolinks.js"></script>
+</head>
+<body>
+  <div id="container">
+    @RenderBody()
+  </div>
+  <script>
+    (function($) {
+      $(document).on('page:load', function () {
+        $('form').each(function () {
+          $.data(this, 'validator', void (0));
+        });
+        $.validator.unobtrusive.parse('form');
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>
