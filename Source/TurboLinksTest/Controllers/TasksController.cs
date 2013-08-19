@@ -26,8 +26,8 @@
             }
 
             return RedirectToProjectDetailsOrReturnHttpStatusCode(
-                201 /* http status code created*/,
-                model.ProjectId);
+                model.ProjectId,
+                201 /* http status created */);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
@@ -47,8 +47,8 @@
             }
 
             return RedirectToProjectDetailsOrReturnHttpStatusCode(
-                204 /* http status no content */,
-                model.ProjectId);
+                model.ProjectId,
+                204 /* http status no content */);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
@@ -59,14 +59,14 @@
             dataContext.Tasks.Remove(model);
             dataContext.SaveChanges();
 
-            return  RedirectToProjectDetailsOrReturnHttpStatusCode(
-                204 /* http status no content */,
-                model.ProjectId);
+            return RedirectToProjectDetailsOrReturnHttpStatusCode(
+                model.ProjectId,
+                204 /* http status no content */);
         }
 
         private ActionResult RedirectToProjectDetailsOrReturnHttpStatusCode(
-            int httpStatusCode,
-            int projectId)
+            int projectId,
+            int httpStatusCode)
         {
             return Request.IsAjaxRequest() ?
                 new HttpStatusCodeResult(httpStatusCode) : 
