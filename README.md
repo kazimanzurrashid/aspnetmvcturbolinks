@@ -7,4 +7,4 @@ The sample originated from [RailsCasts 390 episode](http://railscasts.com/episod
 but also utilizes the built-in Ajax helpers of ASP.NET MVC for seamless smooth
 ux.
 
-[Install via  in nuget](https://www.nuget.org/packages/aspnetmvcturbolinks/)
+[Install via nuget](https://www.nuget.org/packages/aspnetmvcturbolinks/)
