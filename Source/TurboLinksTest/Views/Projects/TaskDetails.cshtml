@@ -10,7 +10,7 @@
   new { id = Model.Id },
   new AjaxOptions { 
     Confirm = "Are you sure you want to remove this task?",
-    OnSuccess = "onTaskSuccess"
+    OnSuccess = "visitProject(" + Model.ProjectId + ")"
   })) {
   @Html.AntiForgeryToken()
   <button type="submit">remove</button>

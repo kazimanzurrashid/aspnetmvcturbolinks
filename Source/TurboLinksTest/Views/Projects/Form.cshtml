@@ -1,6 +1,6 @@
 ﻿@using TurboLinksTest.Models
 @model Project
-@using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "onProjectSuccess" })) {
+@using (Ajax.BeginForm(new AjaxOptions { OnSuccess = "visitRoot" })) {
   <div class="field">
     @Html.LabelFor(m => m.Name)
     @Html.TextBoxFor(m => m.Name, new { autofocus = "autofocus" })

@@ -131,6 +131,10 @@
     <None Include="Scripts\jquery-2.0.3.intellisense.js">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
     </None>
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
@@ -154,6 +158,9 @@
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
     <Content Include="Scripts\turbolinks.js" />
+    <Content Include="Scripts\turbolinks.min.js">
+      <DependentUpon>turbolinks.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

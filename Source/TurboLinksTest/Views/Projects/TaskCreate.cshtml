@@ -5,7 +5,7 @@
   "Tasks",
   new AjaxOptions
     {
-      OnSuccess = "onTaskSuccess"
+      OnSuccess = "visitProject(" + Model.ProjectId + ")" 
     })) {
   <div class="field">
     @Html.HiddenFor(m => m.ProjectId)

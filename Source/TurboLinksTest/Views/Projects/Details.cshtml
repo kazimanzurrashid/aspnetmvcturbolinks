@@ -36,7 +36,7 @@
             method: form.attr('method') || 'POST',
             data: form.serializeArray(),
             success: function() {
-              onTaskSuccess();
+              visitProject(@Model.ProjectId);
             }
           };
 
@@ -46,11 +46,4 @@
       });
     });
   })(jQuery);
-
-  function onTaskSuccess() {
-    Turbolinks.visit('@Url.Action(
-      "Details",
-      "Projects",
-      new { id = Model.ProjectId })');
-  }
 </script>
