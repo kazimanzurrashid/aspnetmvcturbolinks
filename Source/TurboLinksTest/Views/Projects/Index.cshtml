@@ -17,7 +17,7 @@
         new AjaxOptions
           {
             Confirm = "Are you sure you want to delete this project?",
-            OnSuccess = "visitRoot"
+            OnSuccess = "refreshCurrent"
           })) {
         @Html.AntiForgeryToken()
         <button type="submit">Delete</button>

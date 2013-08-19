@@ -2,7 +2,7 @@
 @model Task
 @using (Html.BeginForm("Edit", "Tasks", new { id = Model.Id })) {
   @Html.AntiForgeryToken()
-  <label>@Html.CheckBox("Completed", Model.Completed) @Model.Name</label>
+  <label>@Html.CheckBox("Completed", Model.Completed) @Model.Name</label> 
 }
 @using (Ajax.BeginForm(
   "Delete",
@@ -10,7 +10,7 @@
   new { id = Model.Id },
   new AjaxOptions { 
     Confirm = "Are you sure you want to remove this task?",
-    OnSuccess = "visitProject(" + Model.ProjectId + ")"
+    OnSuccess = "refreshCurrent"
   })) {
   @Html.AntiForgeryToken()
   <button type="submit">remove</button>

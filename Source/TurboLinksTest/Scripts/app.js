@@ -1,16 +1,15 @@
 ﻿/* jshint browser: true */
 /* global jQuery: false, Turbolinks: false  */
 
-(function ($, Turbolinks) {
+(function ($, Turbolinks, globals) {
     'use strict';
     
-    window.visitRoot = function() {
+    globals.visitRoot = function () {
         Turbolinks.visit('/');
     };
 
-    window.visitProject = function(id) {
-        var url = '/projects/details/' + id;
-        Turbolinks.visit(url);
+    globals.refreshCurrent = function () {
+        Turbolinks.visit(globals.location.pathname);
     };
 
     $(document).on('page:load', function () {
@@ -19,4 +18,18 @@
         });
         $.validator.unobtrusive.parse('form');
     });
-})(jQuery, Turbolinks);
+
+    $(document).on('click', '.task-list input[type="checkbox"]', function () {
+        var form = $(this).closest('form'),
+          options = {
+              url: form.attr('action'),
+              method: form.attr('method'),
+              data: form.serializeArray(),
+              success: globals.refreshCurrent
+          };
+
+        options.data.push({ name: "X-Requested-With", value: "XMLHttpRequest" });
+
+        $.ajax(options);
+    });
+})(jQuery, Turbolinks, window);

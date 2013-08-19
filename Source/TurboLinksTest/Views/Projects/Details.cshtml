@@ -26,24 +26,3 @@
   }
 </div>
 <p>@Html.ActionLink("Back to projects", "Index")</p>
-<script>
-  (function($) {
-    $(function() {
-      $(document).on('click', '.task-list input[type="checkbox"]', function () {
-        var form = $(this).closest('form'),
-          options = {
-            url: form.attr('action'),
-            method: form.attr('method') || 'POST',
-            data: form.serializeArray(),
-            success: function() {
-              visitProject(@Model.ProjectId);
-            }
-          };
-
-        options.data.push({ name: "X-Requested-With", value: "XMLHttpRequest" });
-
-        $.ajax(options);
-      });
-    });
-  })(jQuery);
-</script>
