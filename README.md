@@ -6,3 +6,5 @@ original TurboLinks also applies here.
 The sample originated from [RailsCasts 390 episode](http://railscasts.com/episodes/390-turbolinks) 
 but also utilizes the built-in Ajax helpers of ASP.NET MVC for seamless smooth
 ux.
+
+[Install via  in nuget](https://www.nuget.org/packages/aspnetmvcturbolinks/)

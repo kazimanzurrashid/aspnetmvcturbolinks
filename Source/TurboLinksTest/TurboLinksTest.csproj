@@ -96,9 +96,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\TurboLinksAttribute.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
-    <Compile Include="Filters\TurboLinksAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -153,9 +153,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\turbolinks.js">
-      <DependentUpon>turbolinks.coffee</DependentUpon>
-    </Content>
+    <Content Include="Scripts\turbolinks.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -174,9 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\turbolinks.coffee" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Projects\Index.cshtml" />

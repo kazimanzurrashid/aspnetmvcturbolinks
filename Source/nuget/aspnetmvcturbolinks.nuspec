@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>aspnetmvcturbolinks</id>
+    <version>1.0.0-beta</version>
+    <title>Turbolinks</title>
+    <authors>Kazi Manzur Rashid</authors>
+    <owners>Kazi Manzur Rashid</owners>
+    <projectUrl>https://github.com/kazimanzurrashid/turbolinks</projectUrl>
+    <description>Turbolinks in ASP.NET MVC</description>
+    <tags>aspnetmvc history.js ajax pushstate</tags>
+  </metadata>
+</package>

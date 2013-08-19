@@ -2,6 +2,8 @@
 {
     using System.Web.Mvc;
 
+    using ActionFilters;
+
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
