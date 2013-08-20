@@ -157,7 +157,9 @@
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
     <Content Include="Scripts\turbolinks.js" />
-    <Content Include="Scripts\turbolinks.min.js" />
+    <Content Include="Scripts\turbolinks.min.js">
+      <DependentUpon>turbolinks.js</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
