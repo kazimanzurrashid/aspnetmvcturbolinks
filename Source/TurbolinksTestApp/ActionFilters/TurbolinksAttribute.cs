@@ -1,4 +1,4 @@
-namespace $rootnamespace$.ActionFilters
+namespace TurbolinksTestApp.ActionFilters
 {
     using System;
     using System.Web;

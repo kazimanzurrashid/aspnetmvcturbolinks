@@ -1,0 +1,28 @@
+﻿@using TurbolinksTestApp.Models
+@model IEnumerable<Project>
+@{ ViewBag.Title = "Projects"; }
+<h1>@ViewBag.Title</h1>
+<ul id="projects">
+  @foreach (var project in Model) {
+    <li>
+      <h2>@Html.ActionLink(
+        project.Name,
+        "Details",
+        new { id = project.Id })</h2>
+      <span>@project.Tasks.Count tasks</span> |
+      @Html.ActionLink("Rename", "Edit", new { id = project.Id }) | 
+      @using (Ajax.BeginForm(
+        "Delete",
+        new { id = project.Id },
+        new AjaxOptions
+          {
+            Confirm = "Are you sure you want to delete this project?",
+            OnSuccess = "refreshCurrent"
+          })) {
+        @Html.AntiForgeryToken()
+        <button type="submit">Delete</button>
+      }
+    </li>
+  }
+</ul>
+<p>@Html.ActionLink("Create project", "Create")</p>

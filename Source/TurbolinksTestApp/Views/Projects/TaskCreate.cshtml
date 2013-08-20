@@ -1,0 +1,19 @@
+﻿@using TurbolinksTestApp.Models
+@model Task
+@using (Ajax.BeginForm(
+  "Create",
+  "Tasks",
+  new AjaxOptions
+    {
+      OnSuccess = "refreshCurrent" 
+    })) {
+  <div class="field">
+    @Html.HiddenFor(m => m.ProjectId)
+    @Html.AntiForgeryToken()
+    @Html.TextBoxFor(
+      m => m.Name,
+      new { placeholder = "task name...", autofocus = "autofocus" })
+    <button type="submit">Create task</button> 
+    @Html.ValidationMessageFor(m => m.Name)
+  </div>
+}
