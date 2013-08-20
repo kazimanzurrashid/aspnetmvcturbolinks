@@ -1,7 +1,7 @@
 namespace TurbolinksTestApp.Migrations
 {
     using System.Data.Entity.Migrations;
-    
+
     public partial class TaskMigration : DbMigration
     {
         public override void Up()

@@ -109,6 +109,10 @@
     <Compile Include="Migrations\201308200839390_ProjectMigration.Designer.cs">
       <DependentUpon>201308200839390_ProjectMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201308201210295_TaskMigration.cs" />
+    <Compile Include="Migrations\201308201210295_TaskMigration.Designer.cs">
+      <DependentUpon>201308201210295_TaskMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Project.cs" />
@@ -203,6 +207,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201308200839390_ProjectMigration.resx">
       <DependentUpon>201308200839390_ProjectMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308201210295_TaskMigration.resx">
+      <DependentUpon>201308201210295_TaskMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

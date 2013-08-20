@@ -5,13 +5,13 @@ namespace TurbolinksTestApp.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class ProjectMigration : IMigrationMetadata
+    public sealed partial class TaskMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProjectMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TaskMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201308182203524_ProjectMigration"; }
+            get { return "201308201210295_TaskMigration"; }
         }
         
         string IMigrationMetadata.Source
