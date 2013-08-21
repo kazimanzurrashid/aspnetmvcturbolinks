@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2EDAA178-B8D7-4E35-982B-BFB90E7C9183}</ProjectGuid>
+    <ProjectGuid>{CC7EA4C2-4996-4BF1-B78C-89A7F01D4F97}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TurbolinksTestApp</RootNamespace>
-    <AssemblyName>TurbolinksTestApp</AssemblyName>
+    <RootNamespace>TurbolinksBenchmark</RootNamespace>
+    <AssemblyName>TurbolinksBenchmark</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -31,8 +31,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,22 +39,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.1\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -89,6 +86,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -100,44 +98,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFilters\TurbolinksAttribute.cs" />
-    <Compile Include="Controllers\ProjectsController.cs" />
-    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201308200839390_ProjectMigration.cs" />
-    <Compile Include="Migrations\201308200839390_ProjectMigration.Designer.cs">
-      <DependentUpon>201308200839390_ProjectMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201308201210295_TaskMigration.cs" />
-    <Compile Include="Migrations\201308201210295_TaskMigration.Designer.cs">
-      <DependentUpon>201308201210295_TaskMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\DataContext.cs" />
-    <Compile Include="Models\Project.cs" />
-    <Compile Include="Models\Task.cs" />
-    <Compile Include="Models\ProjectViewModel.cs" />
-    <Compile Include="Models\TaskEditModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Content Include="Content\application.css">
-      <DependentUpon>application.less</DependentUpon>
-    </Content>
-    <Content Include="Content\application.min.css">
-      <DependentUpon>application.less</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
     </None>
-    <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\app.min.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
@@ -145,13 +118,13 @@
     <Content Include="Scripts\jquery-2.0.3.min.map">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery.validate-vsdoc.js">
-      <DependentUpon>jquery.validate.js</DependentUpon>
-    </None>
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
       <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
     </Content>
+    <None Include="Scripts\jquery.validate-vsdoc.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </None>
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js">
       <DependentUpon>jquery.validate.js</DependentUpon>
@@ -172,47 +145,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\TaskCreate.cshtml" />
-    <Content Include="Views\Projects\TaskDetails.cshtml" />
-    <Content Include="Views\Projects\TaskList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Projects\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\application.less" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\_ViewStart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Projects\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Projects\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Projects\Form.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201308200839390_ProjectMigration.resx">
-      <DependentUpon>201308200839390_ProjectMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201308201210295_TaskMigration.resx">
-      <DependentUpon>201308201210295_TaskMigration.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -232,7 +174,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61049/</IISUrl>
+          <IISUrl>http://localhost:52374/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

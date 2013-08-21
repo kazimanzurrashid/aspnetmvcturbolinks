@@ -1,0 +1,33 @@
+﻿@{ Layout = null; }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+  <meta content="on" http-equiv="cleartype" />
+  <title>Index</title>
+  <script src="~/Scripts/jquery-2.0.3.js"></script>
+  <script src="~/Scripts/jquery.validate.js"></script>
+  <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+  <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+  <script src="~/Scripts/turbolinks.js"></script>
+</head>
+<body>
+  <h1>Page @ViewBag.id</h1>
+  @{
+    var htmlAttrs = new { data_no_turbolink = true.ToString().ToLowerInvariant() };
+    if (ViewBag.enableTurbolinks) {
+      htmlAttrs = null;
+    }
+  }
+  @Html.ActionLink(
+    "next",
+    "index",
+    new
+      {
+        id = ViewBag.nextId,
+        enableTurbolinks = ViewBag.enableTurbolinks.ToString().ToLowerInvariant()
+      },
+      htmlAttrs)
+</body>
+</html>
