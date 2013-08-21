@@ -8,5 +8,3 @@ but also utilizes the built-in Ajax helpers of ASP.NET MVC for seamless smooth
 ux.
 
 [Install via nuget](https://www.nuget.org/packages/aspnetmvcturbolinks/).
-
-See it [live in action](http://rdir.in.serv10.temphostspace.com/).
